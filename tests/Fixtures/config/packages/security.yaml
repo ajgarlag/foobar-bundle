@@ -1,0 +1,15 @@
+security:
+    providers:
+        users:
+            memory:
+                users:
+                    user:
+                        roles: ['ROLE_USER']
+    firewalls:
+        main:
+            pattern: ^/
+            provider: users
+            form_login: ~
+            logout: ~
+    access_control:
+        - { path: '^/foobar', roles: 'PUBLIC_ACCESS' }
